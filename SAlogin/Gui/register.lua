@@ -29,6 +29,7 @@ function createRegisterGui( )
     guiLabelSetHorizontalAlign( registerPasswordLabel, "center", false )
     guiLabelSetVerticalAlign( registerPasswordLabel, "center" )
     registerPasswordText = guiCreateEdit( 94, 64, 154, 23, "", false, registerWindow )
+    guiEditSetMasked( registerPasswordText, true )
 
     registerEmailLabel = guiCreateLabel( 15, 97, 79, 22, "Email", false, registerWindow )
     guiLabelSetHorizontalAlign( registerEmailLabel, "center", false )
