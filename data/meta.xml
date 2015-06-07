@@ -1,8 +1,0 @@
-<meta>
-    <info author="Jamie" type="script" description="A temporary database to back and restore important data from other resources"/>
-	
-	<script src="general.lua" type="shared"/>
-	<export function="save" type="shared" />
-	<export function="load" type="shared" />
-
-</meta>

