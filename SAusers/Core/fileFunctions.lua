@@ -33,7 +33,7 @@ function writeError( text )
 			fileClose ( errorFile ) -- Close the file
 		else -- Tell the server administrator that it failed and where
 			fileClose ( errorFile )
-			outputDebugString( "ERROR WRITING TO THE LOG FILE @ SAusers.Core.fileFunctions.lua @ LINE 24" )
+			outputDebugString( "ERROR WRITING TO THE LOG FILE @ SAusers.Core.fileFunctions.lua @ LINE 30" )
 		end
 	else -- Tell the server administrator that it failed and where
 		outputDebugString( "ERROR OPENING THE LOG FILE @ SAusers.Core.fileFunctions.lua @ LINE 20" )
