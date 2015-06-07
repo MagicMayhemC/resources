@@ -23,7 +23,7 @@ function initUserSave( )
 end
 addEventHandler( "onPlayerQuit", root, initUserSave )
 
-function initUsersLoad( _, userAccount )
+function initUserLoad( _, userAccount )
 	loadData( source, userAccount )
 end
 addEventHandler( "onPlayerLogin", root, initUserLoad )
