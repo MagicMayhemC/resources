@@ -1,0 +1,25 @@
+
+GUIEditor = {
+    tab = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+local screenW, screenH = guiGetScreenSize()
+        window = guiCreateWindow((screenW - 409) / 2, (screenH - 238) / 2, 409, 238, "SARPG ~ Job name", false)
+        guiWindowSetSizable(window, false)
+
+        infoLBL = guiCreateLabel(48, 31, 389, 37, "You have just been offered a job by _jobname.", false, window)
+        guiLabelSetHorizontalAlign(infoLBL, "center", false)
+        infoTAB = guiCreateTabPanel(20, 27, 369, 168, false, window)
+
+        GUIEditor.tab[1] = guiCreateTab("Information", infoTAB)
+
+        jobinfo = guiCreateMemo(10, 10, 349, 107, "========== _jobname ==========\n_jobinfohere", false, GUIEditor.tab[1])
+        UpdatesLBL = guiCreateLabel(12, 121, 347, 17, "UPDATES: There is currently no latest update!", false, GUIEditor.tab[1])
+        guiLabelSetColor(UpdatesLBL, 254, 0, 209)
+
+
+        AcceptBTN = guiCreateButton(20, 205, 112, 22, "Accept Offer", false, window)
+        DenyBTN = guiCreateButton(277, 205, 112, 22, "Deny Offer", false, window)    
+    end
+)

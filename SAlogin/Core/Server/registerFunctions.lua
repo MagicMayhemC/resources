@@ -1,0 +1,27 @@
+--[[
+    Resource name: San Andreas Login
+
+    Resource Information
+    ------------------------------------
+    This resource logs a user into their
+    account and also allows them to make
+    a new account.
+    ------------------------------------
+    YOU DO NOT HAVE THE RIGHT TO USE THIS
+    WITHOUT PERMISSION! IF YOU HAVE BEEN
+    GIVEN PERMISSION THEN YOU ARE FREE TO
+    MAKE ANY EDITS.
+    ------------------------------------
+    © 2015 - MagicMayhem
+]]--
+function attemptRegister( username, password, email )
+    local checkAccount = getAccount( username )
+
+    if not ( checkAccount ) then
+        triggerEvent( "SAusers.addUser", client, username, password, email, client )
+    else
+        triggerClientEvent( client, "SAlogin.errorHappened", client, "This account name is already taken!" )
+    end
+end
+addEvent( "SAlogin.attemptRegister", true )
+addEventHandler( "SAlogin.attemptRegister", root, attemptRegister )

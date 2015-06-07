@@ -1,0 +1,58 @@
+--[[-------------------------------------------------
+Notes:
+
+> This code is using a relative image filepath. This will only work as long as the location it is from always exists, and the resource it is part of is running.
+    To ensure it does not break, it is highly encouraged to move images into your local resource and reference them there.
+--]]-------------------------------------------------
+
+
+GUIEditor = {
+    button = {},
+    staticimage = {},
+    label = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+local screenW, screenH = guiGetScreenSize()
+        ammuWIN = guiCreateWindow((screenW - 592) / 2, (screenH - 316) / 2, 592, 316, "Ammunation ~ Pick a gun!", false)
+        guiWindowSetSizable(ammuWIN, false)
+
+        GUIEditor.staticimage[1] = guiCreateStaticImage(518, 25, 63, 50, ":SAweapons/Armor.png", false, ammuWIN)
+        GUIEditor.staticimage[2] = guiCreateStaticImage(10, 25, 63, 50, ":SAweapons/Deagle.png", false, ammuWIN)
+        Armor = guiCreateButton(517, 85, 64, 19, "Armor", false, ammuWIN)
+        Deagle = guiCreateButton(9, 85, 64, 19, "Deagle", false, ammuWIN)
+        GUIEditor.staticimage[3] = guiCreateStaticImage(10, 114, 63, 50, ":SAweapons/Ak.png", false, ammuWIN)
+        AK-47 = guiCreateButton(9, 174, 64, 19, "AK-47", false, ammuWIN)
+        GUIEditor.staticimage[4] = guiCreateStaticImage(518, 114, 63, 50, ":SAweapons/Satchel.png", false, ammuWIN)
+        Satchel = guiCreateButton(518, 174, 64, 19, "Satchel", false, ammuWIN)
+        GUIEditor.staticimage[5] = guiCreateStaticImage(10, 203, 64, 50, ":SAweapons/M4.png", false, ammuWIN)
+        M4 = guiCreateButton(9, 263, 64, 19, "M4", false, ammuWIN)
+        GUIEditor.staticimage[6] = guiCreateStaticImage(518, 203, 63, 50, ":SAweapons/Grenade.png", false, ammuWIN)
+        Grenade = guiCreateButton(518, 264, 64, 19, "Grenade", false, ammuWIN)
+        GUIEditor.staticimage[7] = guiCreateStaticImage(83, 114, 63, 50, ":SAweapons/Mp5.png", false, ammuWIN)
+        GUIEditor.staticimage[8] = guiCreateStaticImage(82, 25, 64, 50, ":SAweapons/Pistol.png", false, ammuWIN)
+        Pistol = guiCreateButton(83, 85, 64, 19, "Pistol", false, ammuWIN)
+        GUIEditor.button[1] = guiCreateButton(82, 174, 64, 19, "Buy pistol", false, ammuWIN)
+        MP5 = guiCreateButton(82, 174, 64, 19, "MP5", false, ammuWIN)
+        GUIEditor.staticimage[9] = guiCreateStaticImage(157, 25, 63, 50, ":SAweapons/Silenced.png", false, ammuWIN)
+        Taser = guiCreateButton(157, 85, 64, 19, "Taser", false, ammuWIN)
+        GUIEditor.staticimage[10] = guiCreateStaticImage(448, 25, 64, 51, ":SAweapons/Rifle.png", false, ammuWIN)
+        Rifle = guiCreateButton(447, 85, 64, 19, "Rifle", false, ammuWIN)
+        GUIEditor.staticimage[11] = guiCreateStaticImage(448, 203, 63, 50, ":SAweapons/Molotov.png", false, ammuWIN)
+        Molotov = guiCreateButton(448, 264, 64, 19, "Molotov", false, ammuWIN)
+        GUIEditor.staticimage[12] = guiCreateStaticImage(156, 114, 64, 50, ":SAweapons/Tec.png", false, ammuWIN)
+        TEC-9 = guiCreateButton(156, 174, 64, 19, "TEC-9", false, ammuWIN)
+        GUIEditor.staticimage[13] = guiCreateStaticImage(156, 203, 64, 49, ":SAweapons/Uzi.png", false, ammuWIN)
+        Uzi = guiCreateButton(156, 262, 64, 19, "Mini Uzi", false, ammuWIN)
+        GUIEditor.staticimage[14] = guiCreateStaticImage(447, 115, 64, 49, ":SAweapons/Sniper.png", false, ammuWIN)
+        Sniper = guiCreateButton(448, 174, 64, 19, "Sniper", false, ammuWIN)
+        GUIEditor.staticimage[15] = guiCreateStaticImage(83, 203, 64, 48, ":SAweapons/Sawn-Off.png", false, ammuWIN)
+        sawnoff = guiCreateButton(82, 261, 64, 19, "Sawn off", false, ammuWIN)
+        GUIEditor.staticimage[16] = guiCreateStaticImage(230, 25, 64, 50, ":SAweapons/Shotgun.png", false, ammuWIN)
+        Shotgun = guiCreateButton(230, 85, 64, 19, "Shotgun", false, ammuWIN)
+        GUIEditor.staticimage[17] = guiCreateStaticImage(231, 114, 64, 50, ":SAweapons/Spaz.png", false, ammuWIN)
+        Spaz-12 = guiCreateButton(231, 174, 64, 19, "Spaz-12", false, ammuWIN)
+        GUIEditor.label[1] = guiCreateLabel(8, 290, 573, 16, "Right click anywhere on this gui to close this panel!", false, ammuWIN)
+        guiLabelSetHorizontalAlign(GUIEditor.label[1], "center", false)    
+    end
+)

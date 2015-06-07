@@ -1,0 +1,39 @@
+	Resource name: San Andreas Users
+
+	Resource Information
+	------------------------------------
+	This resource has multiple functions
+	it saves the users data and retrieves
+	it.
+	------------------------------------
+	YOU DO NOT HAVE THE RIGHT TO USE THIS
+	WITHOUT PERMISSION! IF YOU HAVE BEEN
+	GIVEN PERMISSION THEN YOU ARE FREE TO
+	MAKE ANY EDITS.
+	------------------------------------
+	© 2015 - nullRou7e
+
+--- SAN ANDREAS ACCOUNT SAVING ERROR LOG ---
+
+[6/5] 0:33 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 1:31 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 4:33 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 19:48 | Failed to save data for the user: Eva | REASON: This user is a guest
+[6/5] 21:40 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 21:45 | Failed to save data for the user: Eva | REASON: This user is a guest
+[6/5] 22:20 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 22:38 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 22:39 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 22:42 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 23:0 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 23:2 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 23:3 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 23:3 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 23:5 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 23:8 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 23:10 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 23:11 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 23:17 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 23:33 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[6/5] 23:55 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest
+[7/5] 0:17 | Failed to save data for the user: nR7|Mayhem | REASON: This user is a guest

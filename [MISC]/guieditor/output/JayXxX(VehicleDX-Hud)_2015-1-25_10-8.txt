@@ -1,0 +1,54 @@
+--[[-------------------------------------------------
+Notes:
+
+> This code is using a custom font. This will only work as long as the location it is from always exists, and the resource it is part of is running.
+    To ensure it does not break, it is highly encouraged to move custom fonts into your local resource and reference them there.
+--]]-------------------------------------------------
+
+
+
+local dxfont0_DS-DIGIB = dxCreateFont(":guieditor/fonts/DS-DIGIB.ttf", 40)
+
+addEventHandler("onClientRender", root,
+    function()
+        dxDrawRectangle(1126, 721, 175, 21, tocolor(0, 0, 0, 202), false)
+        dxDrawRectangle(1130, 725, 167, 13, tocolor(0, 0, 0, 202), false)
+        dxDrawRectangle(1130, 725, 167, 13, tocolor(65, 163, 0, 255), false)
+        dxDrawText("100%", 1197 - 1, 724 - 1, 1230 - 1, 738 - 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("100%", 1197 + 1, 724 - 1, 1230 + 1, 738 - 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("100%", 1197 - 1, 724 + 1, 1230 - 1, 738 + 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("100%", 1197 + 1, 724 + 1, 1230 + 1, 738 + 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("100%", 1197, 724, 1230, 738, tocolor(255, 255, 255, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("Model: RC Cam", 1130 - 1, 707 - 1, 1299 - 1, 721 - 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("Model: RC Cam", 1130 + 1, 707 - 1, 1299 + 1, 721 - 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("Model: RC Cam", 1130 - 1, 707 + 1, 1299 - 1, 721 + 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("Model: RC Cam", 1130 + 1, 707 + 1, 1299 + 1, 721 + 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("Model: RC Cam", 1130, 707, 1299, 721, tocolor(255, 255, 255, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawLine(1300, 720, 1001, 720, tocolor(0, 0, 0, 224), 1, false)
+        dxDrawText("251", 1002 - 1, 659 - 1, 1094 - 1, 720 - 1, tocolor(0, 0, 0, 224), 1.00, dxfont0_DS-DIGIB, "left", "top", false, false, false, false, false)
+        dxDrawText("251", 1002 + 1, 659 - 1, 1094 + 1, 720 - 1, tocolor(0, 0, 0, 224), 1.00, dxfont0_DS-DIGIB, "left", "top", false, false, false, false, false)
+        dxDrawText("251", 1002 - 1, 659 + 1, 1094 - 1, 720 + 1, tocolor(0, 0, 0, 224), 1.00, dxfont0_DS-DIGIB, "left", "top", false, false, false, false, false)
+        dxDrawText("251", 1002 + 1, 659 + 1, 1094 + 1, 720 + 1, tocolor(0, 0, 0, 224), 1.00, dxfont0_DS-DIGIB, "left", "top", false, false, false, false, false)
+        dxDrawText("251", 1002, 659, 1094, 720, tocolor(255, 255, 255, 224), 1.00, dxfont0_DS-DIGIB, "left", "top", false, false, false, false, false)
+        dxDrawText("Unlocked", 1075 - 1, 724 - 1, 1125 - 1, 738 - 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("Unlocked", 1075 + 1, 724 - 1, 1125 + 1, 738 - 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("Unlocked", 1075 - 1, 724 + 1, 1125 - 1, 738 + 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("Unlocked", 1075 + 1, 724 + 1, 1125 + 1, 738 + 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("Unlocked", 1075, 724, 1125, 738, tocolor(255, 255, 255, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("Fuel: 100%", 1002 - 1, 724 - 1, 1065 - 1, 738 - 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("Fuel: 100%", 1002 + 1, 724 - 1, 1065 + 1, 738 - 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("Fuel: 100%", 1002 - 1, 724 + 1, 1065 - 1, 738 + 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("Fuel: 100%", 1002 + 1, 724 + 1, 1065 + 1, 738 + 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("Fuel: 100%", 1002, 724, 1065, 738, tocolor(255, 255, 255, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("|", 1067 - 1, 724 - 1, 1071 - 1, 740 - 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("|", 1067 + 1, 724 - 1, 1071 + 1, 740 - 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("|", 1067 - 1, 724 + 1, 1071 - 1, 740 + 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("|", 1067 + 1, 724 + 1, 1071 + 1, 740 + 1, tocolor(0, 0, 0, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("|", 1067, 724, 1071, 740, tocolor(255, 255, 255, 255), 1.00, "default", "left", "top", false, false, false, false, false)
+        dxDrawText("KMH", 1093 - 1, 701 - 1, 1126 - 1, 719 - 1, tocolor(0, 0, 0, 255), 0.30, userdata: 00020EC4, "left", "top", false, false, false, false, false)
+        dxDrawText("KMH", 1093 + 1, 701 - 1, 1126 + 1, 719 - 1, tocolor(0, 0, 0, 255), 0.30, userdata: 00020EC4, "left", "top", false, false, false, false, false)
+        dxDrawText("KMH", 1093 - 1, 701 + 1, 1126 - 1, 719 + 1, tocolor(0, 0, 0, 255), 0.30, userdata: 00020EC4, "left", "top", false, false, false, false, false)
+        dxDrawText("KMH", 1093 + 1, 701 + 1, 1126 + 1, 719 + 1, tocolor(0, 0, 0, 255), 0.30, userdata: 00020EC4, "left", "top", false, false, false, false, false)
+        dxDrawText("KMH", 1093, 701, 1126, 719, tocolor(255, 255, 255, 224), 0.30, userdata: 00020EC4, "left", "top", false, false, false, false, false)
+    end
+)

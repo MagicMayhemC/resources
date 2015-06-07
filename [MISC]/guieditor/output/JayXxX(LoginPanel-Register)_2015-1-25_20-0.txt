@@ -1,0 +1,60 @@
+--[[-------------------------------------------------
+Notes:
+
+> This code is using a custom font. This will only work as long as the location it is from always exists, and the resource it is part of is running.
+    To ensure it does not break, it is highly encouraged to move custom fonts into your local resource and reference them there.
+> This code is using a relative image filepath. This will only work as long as the location it is from always exists, and the resource it is part of is running.
+    To ensure it does not break, it is highly encouraged to move images into your local resource and reference them there.
+--]]-------------------------------------------------
+
+
+GUIEditor = {
+    staticimage = {},
+    edit = {},
+    label = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+        GUIEditor.staticimage[1] = guiCreateStaticImage(499, 243, 372, 33, ":guieditor/images/examples/Negro.png", false)
+        guiSetAlpha(GUIEditor.staticimage[1], 0.88)
+
+        GUIEditor.label[1] = guiCreateLabel(0, 0, 372, 32, "SARPG | LOGIN PANEL", false, GUIEditor.staticimage[1])
+        local font0_CaviarDreams = guiCreateFont(":guieditor/fonts/CaviarDreams.ttf", 10)
+        guiSetFont(GUIEditor.label[1], font0_CaviarDreams)
+        guiLabelSetHorizontalAlign(GUIEditor.label[1], "center", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[1], "center")
+
+
+        GUIEditor.staticimage[2] = guiCreateStaticImage(499, 276, 372, 169, ":guieditor/images/examples/Negro.png", false)
+        guiSetAlpha(GUIEditor.staticimage[2], 0.77)
+
+        GUIEditor.label[2] = guiCreateLabel(24, 27, 83, 19, "Account Name", false, GUIEditor.staticimage[2])
+        guiSetFont(GUIEditor.label[2], font0_CaviarDreams)
+        GUIEditor.edit[1] = guiCreateEdit(113, 22, 201, 29, "", false, GUIEditor.staticimage[2])
+        GUIEditor.label[3] = guiCreateLabel(52, 73, 55, 16, "Password", false, GUIEditor.staticimage[2])
+        guiSetFont(GUIEditor.label[3], font0_CaviarDreams)
+        GUIEditor.edit[2] = guiCreateEdit(113, 67, 201, 29, "", false, GUIEditor.staticimage[2])
+        GUIEditor.label[4] = guiCreateLabel(8, 118, 98, 16, "Repeat Password", false, GUIEditor.staticimage[2])
+        guiSetFont(GUIEditor.label[4], font0_CaviarDreams)
+        GUIEditor.edit[3] = guiCreateEdit(113, 112, 201, 29, "", false, GUIEditor.staticimage[2])
+
+
+        GUIEditor.staticimage[3] = guiCreateStaticImage(499, 445, 178, 60, ":guieditor/images/examples/Negro.png", false)
+        guiSetAlpha(GUIEditor.staticimage[3], 0.83)
+
+        GUIEditor.label[5] = guiCreateLabel(0, 0, 177, 60, "Create\nAccount", false, GUIEditor.staticimage[3])
+        local font1_CaviarDreams = guiCreateFont(":guieditor/fonts/CaviarDreams.ttf", 11)
+        guiSetFont(GUIEditor.label[5], font1_CaviarDreams)
+        guiLabelSetHorizontalAlign(GUIEditor.label[5], "center", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[5], "center")
+
+
+        GUIEditor.staticimage[4] = guiCreateStaticImage(693, 445, 178, 60, ":guieditor/images/examples/Negro.png", false)
+        guiSetAlpha(GUIEditor.staticimage[4], 0.83)
+
+        GUIEditor.label[6] = guiCreateLabel(0, 0, 177, 60, "Cancel", false, GUIEditor.staticimage[4])
+        guiSetFont(GUIEditor.label[6], font1_CaviarDreams)
+        guiLabelSetHorizontalAlign(GUIEditor.label[6], "center", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[6], "center")    
+    end
+)

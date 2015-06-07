@@ -1,0 +1,27 @@
+<!--
+	Resource name: San Andreas Users
+
+	Resource Information
+	------------------------------------
+	This resource has multiple functions
+	it saves the users data and retrieves
+	it.
+	------------------------------------
+	YOU DO NOT HAVE THE RIGHT TO USE THIS
+	WITHOUT PERMISSION! IF YOU HAVE BEEN
+	GIVEN PERMISSION THEN YOU ARE FREE TO
+	MAKE ANY EDITS.
+	------------------------------------
+	© 2015 - MagicMayhem
+!-->
+<meta>
+	<info author="MagicMayhem" name="San Andreas Users" start="false"/>
+	<!-- Entry point !-->
+	<script src="users.lua" type="server"/>
+	<!-- Server functions !-->
+	<script src="Core/userFunctions.lua" type="server"/>
+	<!-- Shared functions !-->
+	<script src="Core/fileFunctions.lua" type="shared"/>
+	<script src="Core/saveData.lua" type="shared"/>
+	<script src="Core/loadData.lua" type="shared"/>
+</meta>

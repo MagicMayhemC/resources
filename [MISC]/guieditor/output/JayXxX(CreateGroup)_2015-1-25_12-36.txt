@@ -1,0 +1,52 @@
+--[[-------------------------------------------------
+Notes:
+
+> This code is using a relative image filepath. This will only work as long as the location it is from always exists, and the resource it is part of is running.
+    To ensure it does not break, it is highly encouraged to move images into your local resource and reference them there.
+--]]-------------------------------------------------
+
+
+GUIEditor = {
+    staticimage = {},
+    label = {},
+    edit = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+        GUIEditor.staticimage[1] = guiCreateStaticImage(552, 346, 250, 159, ":guieditor/images/examples/Negro.png", false)
+        guiSetAlpha(GUIEditor.staticimage[1], 0.81)
+
+        GUIEditor.edit[1] = guiCreateEdit(30, 71, 189, 24, "", false, GUIEditor.staticimage[1])
+        guiSetProperty(GUIEditor.edit[1], "NormalTextColour", "FFFFFFFF")
+        guiEditSetMaxLength(GUIEditor.edit[1], 23)
+        GUIEditor.staticimage[2] = guiCreateStaticImage(14, 117, 108, 34, ":guieditor/images/examples/Negro.png", false, GUIEditor.staticimage[1])
+        guiSetAlpha(GUIEditor.staticimage[2], 0.97)
+
+        GUIEditor.label[1] = guiCreateLabel(0, 0, 108, 33, "Create!", false, GUIEditor.staticimage[2])
+        guiSetFont(GUIEditor.label[1], "default-bold-small")
+        guiLabelSetHorizontalAlign(GUIEditor.label[1], "center", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[1], "center")
+
+        GUIEditor.staticimage[3] = guiCreateStaticImage(128, 117, 108, 34, ":guieditor/images/examples/Negro.png", false, GUIEditor.staticimage[1])
+        guiSetAlpha(GUIEditor.staticimage[3], 0.97)
+
+        GUIEditor.label[2] = guiCreateLabel(1, 0, 108, 33, "Close", false, GUIEditor.staticimage[3])
+        guiSetFont(GUIEditor.label[2], "default-bold-small")
+        guiLabelSetColor(GUIEditor.label[2], 255, 31, 31)
+        guiLabelSetHorizontalAlign(GUIEditor.label[2], "center", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[2], "center")
+
+        GUIEditor.label[3] = guiCreateLabel(19, 9, 214, 45, "text text text text text text text text\ntext text text text text text text text\ntext text text text text text text text", false, GUIEditor.staticimage[1])
+        guiSetFont(GUIEditor.label[3], "default-bold-small")
+        guiLabelSetVerticalAlign(GUIEditor.label[3], "center")
+
+
+        GUIEditor.staticimage[4] = guiCreateStaticImage(552, 320, 250, 26, ":guieditor/images/examples/Negro.png", false)
+        guiSetAlpha(GUIEditor.staticimage[4], 0.95)
+
+        GUIEditor.label[4] = guiCreateLabel(0, 0, 250, 26, "Create group", false, GUIEditor.staticimage[4])
+        guiSetFont(GUIEditor.label[4], "default-bold-small")
+        guiLabelSetHorizontalAlign(GUIEditor.label[4], "center", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[4], "center")    
+    end
+)

@@ -1,0 +1,54 @@
+--[[-------------------------------------------------
+Notes:
+
+> This code is using a relative image filepath. This will only work as long as the location it is from always exists, and the resource it is part of is running.
+    To ensure it does not break, it is highly encouraged to move images into your local resource and reference them there.
+--]]-------------------------------------------------
+
+
+GUIEditor = {
+    label = {},
+    staticimage = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+        GUIEditor.staticimage[1] = guiCreateStaticImage(475, 294, 418, 347, ":guieditor/images/examples/Negro.png", false)
+        guiSetAlpha(GUIEditor.staticimage[1], 0.74)
+
+
+        GUIEditor.staticimage[2] = guiCreateStaticImage(475, 268, 103, 26, ":guieditor/images/examples/Negro.png", false)
+        guiSetAlpha(GUIEditor.staticimage[2], 0.97)
+
+        GUIEditor.label[1] = guiCreateLabel(0, 0, 103, 26, "Info", false, GUIEditor.staticimage[2])
+        guiSetFont(GUIEditor.label[1], "default-bold-small")
+        guiLabelSetHorizontalAlign(GUIEditor.label[1], "center", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[1], "center")
+
+
+        GUIEditor.staticimage[3] = guiCreateStaticImage(580, 268, 103, 26, ":guieditor/images/examples/Negro.png", false)
+        guiSetAlpha(GUIEditor.staticimage[3], 0.97)
+
+        GUIEditor.label[2] = guiCreateLabel(0, 0, 103, 25, "Members", false, GUIEditor.staticimage[3])
+        guiSetFont(GUIEditor.label[2], "default-bold-small")
+        guiLabelSetHorizontalAlign(GUIEditor.label[2], "center", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[2], "center")
+
+
+        GUIEditor.staticimage[4] = guiCreateStaticImage(685, 268, 103, 26, ":guieditor/images/examples/Negro.png", false)
+        guiSetAlpha(GUIEditor.staticimage[4], 0.97)
+
+        GUIEditor.label[3] = guiCreateLabel(0, 0, 103, 25, "History", false, GUIEditor.staticimage[4])
+        guiSetFont(GUIEditor.label[3], "default-bold-small")
+        guiLabelSetHorizontalAlign(GUIEditor.label[3], "center", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[3], "center")
+
+
+        GUIEditor.staticimage[5] = guiCreateStaticImage(790, 268, 103, 26, ":guieditor/images/examples/Negro.png", false)
+        guiSetAlpha(GUIEditor.staticimage[5], 0.97)
+
+        GUIEditor.label[4] = guiCreateLabel(0, 0, 103, 25, "Admin", false, GUIEditor.staticimage[5])
+        guiSetFont(GUIEditor.label[4], "default-bold-small")
+        guiLabelSetHorizontalAlign(GUIEditor.label[4], "center", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[4], "center")    
+    end
+)

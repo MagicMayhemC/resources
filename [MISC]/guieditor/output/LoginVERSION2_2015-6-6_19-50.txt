@@ -1,0 +1,28 @@
+--[[-------------------------------------------------
+Notes:
+
+> This code is using a relative image filepath. This will only work as long as the location it is from always exists, and the resource it is part of is running.
+    To ensure it does not break, it is highly encouraged to move images into your local resource and reference them there.
+--]]-------------------------------------------------
+
+
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+local screenW, screenH = guiGetScreenSize()
+        loginWindow = guiCreateWindow((screenW - 255) / 2, (screenH - 255) / 2, 255, 255, "Login", false)
+        guiWindowSetSizable(loginWindow, false)
+
+        usernameEdit = guiCreateEdit(72, 35, 173, 23, "", false, loginWindow)
+        usernameLabel = guiCreateLabel(10, 40, 57, 18, "Username:", false, loginWindow)
+        passwordLabel = guiCreateLabel(10, 68, 57, 18, "Password:", false, loginWindow)
+        passwordEdit = guiCreateEdit(72, 63, 173, 23, "", false, loginWindow)
+        guiEditSetMasked(passwordEdit, true)
+        loginButton = guiCreateButton(194, 100, 51, 20, "Login", false, loginWindow)
+        registerButton = guiCreateButton(133, 100, 51, 20, "Register", false, loginWindow)
+        rememberCheckBox = guiCreateCheckBox(10, 102, 105, 18, "Remember me", false, false, loginWindow)
+        updatesMemo = guiCreateMemo(12, 130, 233, 115, "[06/06/15]\n- Rescripting everything", false, loginWindow)
+
+
+        logoImage = guiCreateStaticImage(0.36, 0.14, 0.28, 0.13, ":SAlogin/images/logo.png", true)    
+    end
+)

@@ -1,0 +1,23 @@
+
+GUIEditor = {
+    tab = {},
+    tabpanel = {},
+    label = {},
+    button = {},
+    window = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+        GUIEditor.window[1] = guiCreateWindow(802, 330, 409, 238, "SARPG ~ Job name", false)
+        guiWindowSetSizable(GUIEditor.window[1], false)
+
+        GUIEditor.label[1] = guiCreateLabel(48, 32, 389, 37, "You have just been offered a job by _jobname.", false, GUIEditor.window[1])
+        guiLabelSetHorizontalAlign(GUIEditor.label[1], "center", false)
+        GUIEditor.tabpanel[1] = guiCreateTabPanel(20, 27, 369, 168, false, GUIEditor.window[1])
+
+        GUIEditor.tab[1] = guiCreateTab("Information", GUIEditor.tabpanel[1])
+
+        GUIEditor.button[1] = guiCreateButton(20, 205, 112, 22, "Accept", false, GUIEditor.window[1])
+        GUIEditor.button[2] = guiCreateButton(277, 205, 112, 22, "Deny", false, GUIEditor.window[1])    
+    end
+)

@@ -1,0 +1,26 @@
+--[[-------------------------------------------------
+Notes:
+
+> This code is using a relative image filepath. This will only work as long as the location it is from always exists, and the resource it is part of is running.
+    To ensure it does not break, it is highly encouraged to move images into your local resource and reference them there.
+--]]-------------------------------------------------
+
+
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+local screenW, screenH = guiGetScreenSize()
+        slotWin = guiCreateWindow((screenW - 458) / 2, (screenH - 245) / 2, 458, 245, "Los Santos Casino", false)
+        guiWindowSetSizable(slotWin, false)
+
+        slotBAR1 = guiCreateStaticImage(10, 62, 139, 125, ":OWLslotmachine/images/banana.png", false, slotWin)
+        slotBAR2 = guiCreateStaticImage(159, 62, 139, 125, ":OWLslotmachine/images/banana.png", false, slotWin)
+        slotBAR3 = guiCreateStaticImage(311, 62, 137, 125, ":OWLslotmachine/images/banana.png", false, slotWin)
+        rollBTN = guiCreateButton(317, 205, 131, 30, "Roll!", false, slotWin)
+        holdBAR3 = guiCreateButton(321, 32, 121, 20, "HOLD", false, slotWin)
+        holdBAR2 = guiCreateButton(169, 32, 121, 20, "HOLD", false, slotWin)
+        holdBAR1 = guiCreateButton(20, 32, 121, 20, "HOLD", false, slotWin)
+        addBTN = guiCreateButton(211, 215, 85, 19, "Add $10", false, slotWin)
+        Credits = guiCreateLabel(10, 219, 96, 16, "Credits: $1", false, slotWin)
+        payOutBTN = guiCreateButton(116, 215, 85, 20, "Pay out", false, slotWin)    
+    end
+)

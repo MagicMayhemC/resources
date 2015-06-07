@@ -1,0 +1,34 @@
+
+GUIEditor = {
+    tab = {},
+    tabpanel = {},
+    edit = {},
+    button = {},
+    window = {},
+    label = {},
+    checkbox = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+        GUIEditor.window[1] = guiCreateWindow(601, 304, 338, 183, "", false)
+        guiWindowSetSizable(GUIEditor.window[1], false)
+
+        GUIEditor.tabpanel[1] = guiCreateTabPanel(10, 24, 318, 149, false, GUIEditor.window[1])
+
+        GUIEditor.tab[1] = guiCreateTab("Login", GUIEditor.tabpanel[1])
+
+        GUIEditor.edit[1] = guiCreateEdit(79, 58, 229, 20, "", false, GUIEditor.tab[1])
+        guiEditSetMasked(GUIEditor.edit[1], true)
+        GUIEditor.edit[2] = guiCreateEdit(79, 33, 229, 20, "", false, GUIEditor.tab[1])
+        GUIEditor.button[1] = guiCreateButton(14, 94, 65, 21, "Login", false, GUIEditor.tab[1])
+        GUIEditor.checkbox[1] = guiCreateCheckBox(213, 95, 101, 20, "Remember me", false, false, GUIEditor.tab[1])
+        GUIEditor.label[1] = guiCreateLabel(15, 33, 54, 15, "Username", false, GUIEditor.tab[1])
+        GUIEditor.label[2] = guiCreateLabel(15, 58, 54, 15, "Password", false, GUIEditor.tab[1])
+        GUIEditor.button[2] = guiCreateButton(89, 94, 114, 21, "Recover Password", false, GUIEditor.tab[1])
+        GUIEditor.label[3] = guiCreateLabel(14, 10, 294, 16, "NOTE: Do not give out your password!", false, GUIEditor.tab[1])
+        guiLabelSetColor(GUIEditor.label[3], 255, 31, 31)
+        guiLabelSetHorizontalAlign(GUIEditor.label[3], "center", false)
+
+        GUIEditor.tab[2] = guiCreateTab("Register", GUIEditor.tabpanel[1])    
+    end
+)

@@ -1,0 +1,26 @@
+
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+        window = guiCreateWindow(601, 304, 338, 183, "SARPG ~ Login", false)
+        guiWindowSetSizable(window, false)
+
+        tabPNL = guiCreateTabPanel(10, 24, 318, 149, false, window)
+
+        loginTAB = guiCreateTab("Login", tabPNL)
+
+        passwordTXT = guiCreateEdit(79, 58, 229, 20, "", false, loginTAB)
+        guiEditSetMasked(passwordTXT, true)
+        usernameTXT = guiCreateEdit(79, 33, 229, 20, "", false, loginTAB)
+        loginBTN = guiCreateButton(14, 94, 65, 21, "Login", false, loginTAB)
+        rememberCHK = guiCreateCheckBox(213, 95, 101, 20, "Remember me", false, false, loginTAB)
+        usernameLBL = guiCreateLabel(15, 33, 54, 15, "Username", false, loginTAB)
+        passwordLBL = guiCreateLabel(15, 58, 54, 15, "Password", false, loginTAB)
+        recoverBTN = guiCreateButton(89, 94, 114, 21, "Recover Password", false, loginTAB)
+        noteLBL = guiCreateLabel(14, 10, 294, 16, "NOTE: Do not give out your password!", false, loginTAB)
+        guiLabelSetColor(noteLBL, 255, 31, 31)
+        guiLabelSetHorizontalAlign(noteLBL, "center", false)
+
+        registerTAB = guiCreateTab("Register", tabPNL)
+        newsTAB = guiCreateTab("News", tabPNL)    
+    end
+)

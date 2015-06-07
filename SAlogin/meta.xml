@@ -1,0 +1,33 @@
+<!--
+	Resource name: San Andreas Login
+
+	Resource Information
+	------------------------------------
+	This resource logs a user into their
+	account and also allows them to make
+	a new account.
+	------------------------------------
+	YOU DO NOT HAVE THE RIGHT TO USE THIS
+	WITHOUT PERMISSION! IF YOU HAVE BEEN
+	GIVEN PERMISSION THEN YOU ARE FREE TO
+	MAKE ANY EDITS.
+	------------------------------------
+	© 2015 - MagicMayhem
+!-->
+<meta>
+	<info author="MagicMayhem" name="San Andreas Users" start="false"/>
+	<!-- Server functions !-->
+	<script src="Core/Server/loginFunctions.lua" type="server"/>
+	<script src="Core/Server/registerFunctions.lua" type="server"/>
+	<!-- Client functions !-->
+	<script src="Core/Client/loginFunctions.lua" type="client"/>
+	<script src="Core/Client/registerFunctions.lua" type="client"/>
+	<!-- GUIs !-->
+	<script src="Gui/login.lua" type="client"/>
+	<script src="Gui/register.lua" type="client"/>
+	<script src="Gui/error.lua" type="client"/>
+	<!-- Images !-->
+	<file src="Gui/images/bg.png"/>
+	<file src="Gui/images/logo.png"/>
+	<file src="Gui/images/info.png"/>
+</meta>

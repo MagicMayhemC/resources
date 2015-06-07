@@ -1,0 +1,11 @@
+
+
+local screenW, screenH = guiGetScreenSize()
+
+addEventHandler("onClientRender", root,
+    function()
+        dxDrawRectangle((528/1600)*screenW, (0/900)*screenH, 545, 31, tocolor(0, 0, 0, 135), false)
+        dxDrawText("You are now a medic!", 537 + 1, 1 + 1, 1063 + 1, 31 + 1, tocolor(0, 0, 0, 255), 1.20, "arial", "center", "center", false, false, false, false, false)
+        dxDrawText("You are now a medic!", (537/1600)*screenW, (1/900)*screenH, ((537/1600)*screenW) + 526, ( (1/900)*screenH) + 30, tocolor(255, 255, 255, 255), 1.20, "arial", "center", "center", false, false, false, false, false)
+    end
+)

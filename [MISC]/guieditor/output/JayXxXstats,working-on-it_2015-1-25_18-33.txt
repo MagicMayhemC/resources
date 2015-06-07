@@ -1,0 +1,28 @@
+--[[-------------------------------------------------
+Notes:
+
+> This code is using a relative image filepath. This will only work as long as the location it is from always exists, and the resource it is part of is running.
+    To ensure it does not break, it is highly encouraged to move images into your local resource and reference them there.
+--]]-------------------------------------------------
+
+
+GUIEditor = {
+    gridlist = {},
+    staticimage = {},
+    label = {},
+    edit = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+        GUIEditor.staticimage[1] = guiCreateStaticImage(434, 213, 484, 434, ":guieditor/images/examples/Negro.png", false)
+        guiSetAlpha(GUIEditor.staticimage[1], 0.69)
+
+        GUIEditor.gridlist[1] = guiCreateGridList(6, 38, 225, 389, false, GUIEditor.staticimage[1])
+        guiGridListAddColumn(GUIEditor.gridlist[1], "Players", 0.9)
+        GUIEditor.edit[1] = guiCreateEdit(7, 8, 196, 26, "", false, GUIEditor.staticimage[1])
+        GUIEditor.label[1] = guiCreateLabel(230, 9, 253, 24, "JayXxX's Stats", false, GUIEditor.staticimage[1])
+        guiSetFont(GUIEditor.label[1], "default-bold-small")
+        guiLabelSetHorizontalAlign(GUIEditor.label[1], "center", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[1], "center")    
+    end
+)

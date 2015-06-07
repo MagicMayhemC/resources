@@ -1,0 +1,14 @@
+
+
+local screenW, screenH = guiGetScreenSize()
+
+addEventHandler("onClientRender", root,
+    function()
+        dxDrawRectangle(screenW * 0.4281, screenH * 0.4556, screenW * 0.1437, screenH * 0.0889, tocolor(0, 0, 0, 206), false)
+        dxDrawText("Do you want to insert $10 to use the slot machine?", screenW * 0.4344, screenH * 0.4722, screenW * 0.5656, screenH * 0.5011, tocolor(255, 255, 255, 255), 1.00, "default", "left", "top", false, true, false, false, false)
+        dxDrawRectangle(695, 464, 95, 16, tocolor(34, 34, 34, 237), false)
+        dxDrawRectangle(810, 464, 95, 16, tocolor(34, 34, 34, 237), false)
+        dxDrawText("Yes", screenW * 0.4344, screenH * 0.5156, screenW * 0.4938, screenH * 0.5333, tocolor(255, 255, 255, 255), 1.00, "default", "center", "top", false, false, false, false, false)
+        dxDrawText("No", screenW * 0.5062, screenH * 0.5156, screenW * 0.5656, screenH * 0.5333, tocolor(255, 255, 255, 255), 1.00, "default", "center", "top", false, false, false, false, false)
+    end
+)

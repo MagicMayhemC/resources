@@ -1,0 +1,16 @@
+
+GUIEditor = {
+    button = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+        medWIN = guiCreateWindow(684, 364, 290, 104, "San Andreas Hospital", false)
+        guiWindowSetSizable(medWIN, false)
+
+        amountTXT = guiCreateEdit(10, 46, 270, 24, "", false, medWIN)
+        lbl1 = guiCreateLabel(14, 26, 251, 20, "How many med kits do you want? (0-10)", false, medWIN)
+        totalLBL = guiCreateLabel(14, 76, 162, 19, "Total cost: $costhere", false, medWIN)
+        okBTN = guiCreateButton(186, 76, 94, 19, "Purchase", false, medWIN)
+        GUIEditor.button[1] = guiCreateButton(260, 22, 20, 18, "[X]", false, medWIN)    
+    end
+)

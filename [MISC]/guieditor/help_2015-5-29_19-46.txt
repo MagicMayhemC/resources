@@ -1,0 +1,18 @@
+
+GUIEditor = {
+    gridlist = {},
+    window = {},
+    memo = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+        GUIEditor.window[1] = guiCreateWindow(538, 282, 569, 351, "San Andreas RPG", false)
+        guiWindowSetSizable(GUIEditor.window[1], false)
+
+        GUIEditor.gridlist[1] = guiCreateGridList(10, 32, 208, 302, false, GUIEditor.window[1])
+        guiGridListAddColumn(GUIEditor.gridlist[1], "Information", 0.9)
+        guiGridListAddRow(GUIEditor.gridlist[1])
+        guiGridListSetItemText(GUIEditor.gridlist[1], 0, 1, "Welcome", false, false)
+        GUIEditor.memo[1] = guiCreateMemo(249, 32, 310, 302, "$INFO", false, GUIEditor.window[1])    
+    end
+)

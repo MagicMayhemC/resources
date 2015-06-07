@@ -1,0 +1,67 @@
+--[[-------------------------------------------------
+Notes:
+
+> This code is using a custom font. This will only work as long as the location it is from always exists, and the resource it is part of is running.
+    To ensure it does not break, it is highly encouraged to move custom fonts into your local resource and reference them there.
+> This code is using a relative image filepath. This will only work as long as the location it is from always exists, and the resource it is part of is running.
+    To ensure it does not break, it is highly encouraged to move images into your local resource and reference them there.
+--]]-------------------------------------------------
+
+
+GUIEditor = {
+    checkbox = {},
+    staticimage = {},
+    label = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+local screenW, screenH = guiGetScreenSize()
+        loginBTN = guiCreateButton(612, 536, 180, 59, "", false)
+        guiSetAlpha(loginBTN, 0.00)
+
+
+        registerBTN = guiCreateButton(808, 535, 180, 59, "", false)
+        guiSetAlpha(registerBTN, 0.00)
+
+
+        GUIEditor.staticimage[1] = guiCreateStaticImage(614, 333, 372, 33, ":guieditor/images/examples/Negro.png", false)
+        guiSetAlpha(GUIEditor.staticimage[1], 0.88)
+
+        GUIEditor.label[1] = guiCreateLabel(0, 1, 372, 32, "SARPG | LOGIN PANEL", false, GUIEditor.staticimage[1])
+        local font0_CaviarDreams = guiCreateFont(":guieditor/fonts/CaviarDreams.ttf", 10)
+        guiSetFont(GUIEditor.label[1], font0_CaviarDreams)
+        guiLabelSetHorizontalAlign(GUIEditor.label[1], "center", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[1], "center")
+
+
+        content = guiCreateStaticImage((screenW - 372) / 2, (screenH - 169) / 2, 372, 169, ":guieditor/images/examples/Negro.png", false)
+        guiSetAlpha(content, 0.77)
+
+        GUIEditor.label[2] = guiCreateLabel(38, 9, 84, 22, "Account name", false, content)
+        guiSetFont(GUIEditor.label[2], font0_CaviarDreams)
+        usernameTXT = guiCreateEdit(37, 31, 297, 29, "", false, content)
+        GUIEditor.label[3] = guiCreateLabel(38, 73, 69, 18, "Password", false, content)
+        guiSetFont(GUIEditor.label[3], font0_CaviarDreams)
+        passwordTXT = guiCreateEdit(37, 96, 297, 29, "", false, content)
+        GUIEditor.checkbox[1] = guiCreateCheckBox(27, 139, 119, 15, "Remember Me", false, false, content)
+        guiSetFont(GUIEditor.checkbox[1], font0_CaviarDreams)
+
+
+        GUIEditor.staticimage[2] = guiCreateStaticImage(614, 535, 178, 60, ":guieditor/images/examples/Negro.png", false)
+        guiSetAlpha(GUIEditor.staticimage[2], 0.83)
+
+        GUIEditor.label[4] = guiCreateLabel(0, 0, 178, 60, "LOGIN", false, GUIEditor.staticimage[2])
+        guiSetFont(GUIEditor.label[4], font0_CaviarDreams)
+        guiLabelSetHorizontalAlign(GUIEditor.label[4], "center", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[4], "center")
+
+
+        GUIEditor.staticimage[3] = guiCreateStaticImage(808, 535, 178, 60, ":guieditor/images/examples/Negro.png", false)
+        guiSetAlpha(GUIEditor.staticimage[3], 0.83)
+
+        GUIEditor.label[5] = guiCreateLabel(0, 0, 177, 60, "REGISTER", false, GUIEditor.staticimage[3])
+        guiSetFont(GUIEditor.label[5], font0_CaviarDreams)
+        guiLabelSetHorizontalAlign(GUIEditor.label[5], "center", false)
+        guiLabelSetVerticalAlign(GUIEditor.label[5], "center")    
+    end
+)

@@ -1,0 +1,33 @@
+--[[-------------------------------------------------
+Notes:
+
+> This code is using a relative image filepath. This will only work as long as the location it is from always exists, and the resource it is part of is running.
+    To ensure it does not break, it is highly encouraged to move images into your local resource and reference them there.
+--]]-------------------------------------------------
+
+
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+local screenW, screenH = guiGetScreenSize()
+        ammuwin = guiCreateWindow((screenW - 495) / 2, (screenH - 249) / 2, 495, 249, "Ammunation", false)
+        guiWindowSetSizable(ammuwin, false)
+
+        buyDGL = guiCreateButton(87, 29, 97, 26, "Purchase Deagle", false, ammuwin)
+        deagleimg = guiCreateStaticImage(15, 29, 62, 48, ":SAammu/images/Deagle.png", false, ammuwin)
+        buyammoDGL = guiCreateButton(87, 61, 97, 26, "Buy Ammo", false, ammuwin)
+        spazimg = guiCreateStaticImage(15, 97, 62, 48, ":SAammu/images/Deagle.png", false, ammuwin)
+        buySPAZ = guiCreateButton(87, 97, 97, 26, "Purchase Spaz", false, ammuwin)
+        buyammoSPAZ = guiCreateButton(87, 129, 97, 26, "Buy Ammo", false, ammuwin)
+        m4img = guiCreateStaticImage(15, 165, 62, 48, ":SAammu/images/Deagle.png", false, ammuwin)
+        buyM4 = guiCreateButton(87, 165, 97, 26, "Purchase M4", false, ammuwin)
+        buyammoM4 = guiCreateButton(87, 197, 97, 26, "Buy Ammo", false, ammuwin)
+        armorimg = guiCreateStaticImage(423, 29, 62, 48, ":SAammu/images/Deagle.png", false, ammuwin)
+        buyarmor = guiCreateButton(316, 29, 97, 26, "Purchase Armor", false, ammuwin)
+        grenadeimg = guiCreateStaticImage(423, 87, 62, 48, ":SAammu/images/Deagle.png", false, ammuwin)
+        buyGREN = guiCreateButton(316, 87, 97, 26, "Purchase Gren.", false, ammuwin)
+        buyC4 = guiCreateButton(316, 145, 97, 26, "Purchase C4", false, ammuwin)
+        c4img = guiCreateStaticImage(423, 145, 62, 48, ":SAammu/images/Deagle.png", false, ammuwin)
+        label = guiCreateLabel(194, 223, 265, 19, "More weapons coming soon!", false, ammuwin)
+        closebtn = guiCreateButton(404, 220, 81, 19, "Close", false, ammuwin)    
+    end
+)

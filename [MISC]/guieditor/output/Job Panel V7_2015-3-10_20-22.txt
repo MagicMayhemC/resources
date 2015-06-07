@@ -1,0 +1,25 @@
+
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+local screenW, screenH = guiGetScreenSize()
+        window = guiCreateWindow((1158/1600)*screenW, (279/900)*screenH, 409, 238, "SARPG ~ Job name", false)
+        guiWindowSetSizable(window, false)
+
+        infoTAB = guiCreateTabPanel(20, 27, 369, 168, false, window)
+
+        infoTABMAIN = guiCreateTab("Information", infoTAB)
+
+        jobinfo = guiCreateMemo(10, 10, 349, 107, "========== _jobname ==========\n_jobinfohere", false, infoTABMAIN)
+        UpdatesLBL = guiCreateLabel(12, 121, 347, 17, "UPDATES: There is currently no latest update!", false, infoTABMAIN)
+        guiLabelSetColor(UpdatesLBL, 254, 0, 209)
+
+        skinTAB = guiCreateTab("Select Skin", infoTAB)
+
+        skinGRID = guiCreateGridList(10, 10, 349, 124, false, skinTAB)
+        guiGridListAddColumn(skinGRID, "Skin", 0.9)
+
+
+        AcceptBTN = guiCreateButton(20, 205, 112, 22, "Accept Offer", false, window)
+        DenyBTN = guiCreateButton(277, 205, 112, 22, "Deny Offer", false, window)    
+    end
+)
