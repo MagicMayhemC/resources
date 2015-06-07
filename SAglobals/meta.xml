@@ -1,0 +1,27 @@
+<!--
+	Resource name: San Andreas Globals
+
+	Resource Information
+	------------------------------------
+	This resource logs a user into their
+	account and also allows them to make
+	a new account.
+	------------------------------------
+	YOU DO NOT HAVE THE RIGHT TO USE THIS
+	WITHOUT PERMISSION! IF YOU HAVE BEEN
+	GIVEN PERMISSION THEN YOU ARE FREE TO
+	MAKE ANY EDITS.
+	------------------------------------
+	© 2015 - Jamie
+!-->
+<meta>
+	<info author="Jamie" name="San Andreas Globals" version="1.0"/>
+	<!-- Server functions !-->
+	<script src="staff.lua" type="shared" />
+    <export function="isPlayerStaff" type="shared" />
+    <export function="isPlayerAdmin" type="shared" />
+    <export function="isPlayerTrialAdmin" type="shared" />
+    <export function="isPlayerSeniorAdmin" type="shared" />
+    <export function="isPlayerFounder" type="shared" />
+    <export function="getStaff" type="shared" />
+</meta>
