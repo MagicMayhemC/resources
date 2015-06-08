@@ -34,13 +34,18 @@ function startLoginBG( )
 end
 
 function showLoginGui( )
-    guiSetVisible( registerWindow, false )
+    if ( registerWindow ) then 
+        guiSetVisible( registerWindow, false )
+    end
+
     guiSetVisible( loginWindow, true )
 
     guiSetInputEnabled( true )
     showCursor( true )
 
     loadXMLdata( )
+
+    triggerServerEvent( "SAlogin.sendUpdates", localPlayer )
 
     startLoginBG( )
 end
@@ -51,7 +56,15 @@ function hideExtras( )
     guiSetVisible( border1, false )
     guiSetVisible( border2, false )
     guiSetVisible( logo, false )
+    guiSetVisible( minilogo, false )
 end
+
+function receiveUpdates( sUpdates, sDates )
+    local memoText = exports.SAupdates:parseUpdates( sUpdates, sDates )
+    guiSetText( updatesMemo,  memoText )
+end
+addEvent( "SAlogin.receiveUpdates", true )
+addEventHandler( "SAlogin.receiveUpdates", root, receiveUpdates )
 
 function parseLogin( )
     local username = string.lower( guiGetText( usernameEdit ) )

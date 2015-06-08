@@ -1,0 +1,31 @@
+<!--
+	Resource name: San Andreas Updates
+
+	Resource Information
+	------------------------------------
+	This resource has informs users of
+	the current latest updates.
+	------------------------------------
+	YOU DO NOT HAVE THE RIGHT TO USE THIS
+	WITHOUT PERMISSION! IF YOU HAVE BEEN
+	GIVEN PERMISSION THEN YOU ARE FREE TO
+	MAKE ANY EDITS.
+	------------------------------------
+	© 2015 - MagicMayhem
+!-->
+<meta>
+	<info author="MagicMayhem" name="San Andreas Users" start="false"/>
+	<!-- Client functions !-->
+	<script src="Core/Client/time.lua" type="client"/>
+	<script src="Core/Client/updateFunctions.lua" type="client"/>
+	<!-- Shared functions !-->
+	<script src="Core/Server/data/updateTables.lua" type="shared"/>
+	<!-- Server functions !-->
+	<script src="Core/Server/databaseManager.lua" type="server"/>
+	<script src="Core/Server/updateFunctions.lua" type="server"/>
+	<!-- GUIs !-->
+	<script src="Gui/updates.lua" type="client"/>
+	<!-- Exports !-->
+	<export function="getUpdates" type="server"/>
+	<export function="parseUpdates" type="client"/>
+</meta>
