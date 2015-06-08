@@ -26,7 +26,7 @@ function XMLexists( )
 end
 
 function decryptPass( password, username )
-	return teaDecode( password, key .. username )
+	return teaDecode( password, key .. username ) -- Decrypts the password with a special key
 end
 
 function encryptPass( password, username )
