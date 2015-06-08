@@ -17,8 +17,8 @@
 function parseUpdates( updates, dates )
 	local memoText = "Updates\r\n"
 
-	table.sort(updates, function(a, b) return a[4] > b[4] end)
-    table.sort(dates, function(a, b) return a[2] > b[2] end)
+	table.sort(updates, function(a, b) return a[4] > b[4] end) -- sort by id, last id = latest update
+    table.sort(dates, function(a, b) return a[2] > b[2] end) -- sort by id, last id = latest date
 
 	for key, date in pairs( dates ) do
 		memoText = memoText .. "\r\n" .. FormatDate( "[d/m/Y]", " ", date[1] )
