@@ -30,7 +30,7 @@ function startLoginBG( )
     setPlayerHudComponentVisible( "all", false )
     showChat( false )
 
-   addEventHandler( "onClientRender", root, stopTime )
+    addEventHandler( "onClientRender", root, stopTime )
 end
 
 function showLoginGui( )
@@ -39,6 +39,8 @@ function showLoginGui( )
 
     guiSetInputEnabled( true )
     showCursor( true )
+
+    loadXMLdata( )
 
     startLoginBG( )
 end
@@ -64,6 +66,8 @@ end
 
 function loggedIn( accountName )
     fadeCamera( false, 3 )
+
+    saveXMLdata( )
 
     guiSetVisible( loginWindow, false )
     guiSetVisible( registerWindow, false )
