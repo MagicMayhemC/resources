@@ -35,5 +35,3 @@ function addUser( account, password, email, thePlayer )
 		triggerEvent( "SAlogin.attemptLogin", thePlayer, account, password, thePlayer )
 	end
 end
-addEvent( "SAusers.addUser", true )
-addEventHandler( "SAusers.addUser", root, addUser )

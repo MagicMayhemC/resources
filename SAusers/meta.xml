@@ -24,4 +24,6 @@
 	<script src="Core/fileFunctions.lua" type="shared"/>
 	<script src="Core/saveData.lua" type="shared"/>
 	<script src="Core/loadData.lua" type="shared"/>
+	<!-- Exports !-->
+	<export function="addUser" type="server"/>
 </meta>

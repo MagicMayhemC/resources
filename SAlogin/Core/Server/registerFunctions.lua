@@ -18,7 +18,7 @@ function attemptRegister( username, password, email )
     local checkAccount = getAccount( username )
 
     if not ( checkAccount ) then
-        triggerEvent( "SAusers.addUser", client, username, password, email, client )
+        exports.SAusers:addUser( username, password, email, client )
     else
         triggerClientEvent( client, "SAlogin.errorHappened", client, "This account name is already taken!" )
     end
