@@ -29,7 +29,7 @@ function saveData( theUser, theAcc )
 	local rx, ry, rz = getElementRotation( theUser )
 	local int = getElementInterior( theUser )
 	
-	local userPos = toJSON( { x, y, z, rx, ry, rz, int } )
+	local userPos = toJSON( { x, y, z + 0.2, rx, ry, rz, int } )
 	local userSkin = getElementModel( theUser )
 
 	local userHP = getElementHealth( theUser )
