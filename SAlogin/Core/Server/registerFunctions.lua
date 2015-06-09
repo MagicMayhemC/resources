@@ -25,3 +25,15 @@ function attemptRegister( username, password, email )
 end
 addEvent( "SAlogin.attemptRegister", true )
 addEventHandler( "SAlogin.attemptRegister", root, attemptRegister )
+
+function isAccountTaken( accountName )
+    local userAccount = getAccount( accountName )
+
+    if ( userAccount ) then
+        triggerClientEvent( client, "SAlogin.isAccountNameTakenReply", client, true )
+    else
+        triggerClientEvent( client, "SAlogin.isAccountNameTakenReply", client, false )
+    end
+end
+addEvent( "SAlogin.isAccountNameTaken", true )
+addEventHandler( "SAlogin.isAccountNameTaken", root, isAccountTaken )

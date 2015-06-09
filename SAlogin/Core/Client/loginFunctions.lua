@@ -68,10 +68,10 @@ addEventHandler( "SAlogin.receiveUpdates", root, receiveUpdates )
 
 function parseLogin( )
     local username = string.lower( guiGetText( usernameEdit ) )
-    local password = string.lower( guiGetText( passwordEdit ) )
+    local password = guiGetText( passwordEdit )
 
     if not ( username == "" ) and not ( password == "" ) then
-        triggerServerEvent( "SAlogin.attemptLogin", localPlayer, username, password )
+            triggerServerEvent( "SAlogin.attemptLogin", localPlayer, username, password )
     else
         errorHappened( "You left a field blank!" )
     end
