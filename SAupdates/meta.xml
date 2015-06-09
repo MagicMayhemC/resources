@@ -26,6 +26,5 @@
 	<!-- GUIs !-->
 	<script src="Gui/updates.lua" type="client"/>
 	<!-- Exports !-->
-	<export function="getUpdates" type="server"/>
 	<export function="parseUpdates" type="client"/>
 </meta>

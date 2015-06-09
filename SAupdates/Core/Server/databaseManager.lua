@@ -22,7 +22,7 @@ function cacheUpdates()
     for _, row in ipairs( result ) do
         updates[ row[ "id" ] ] = { tostring ( row[ "date" ] ), row[ "text" ], row[ "author" ], row[ "id" ] }
 
-        if not ( dates[ row["date"] ] ) then
+        if not ( dates[ row["date"] ] ) then -- if the date hasn't already been added to the table then add it
             dates[ row["date"] ] = { tostring ( row[ "date" ] ), row[ "id" ] }
         end
     end

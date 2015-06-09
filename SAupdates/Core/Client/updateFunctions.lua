@@ -26,7 +26,7 @@ function parseUpdates( updates, dates )
 		for id, update in ipairs( updates ) do
 			local dateOfUpdate, updateInfo, author = unpack( update )
 
-			if ( dateOfUpdate == date[1] ) then
+			if ( dateOfUpdate == date[1] ) then -- if the date of the update is the same as the one being processed then add it to the memo
 				memoText = memoText .. "\r\n- " .. updateInfo .. " (" .. author .. ")"
 			end
 		end

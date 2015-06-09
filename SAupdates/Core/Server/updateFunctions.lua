@@ -13,10 +13,6 @@
     ------------------------------------
     © 2015 - MagicMayhem
 ]]--
-function getUpdates( )
-    return updates, dates
-end
-
 function sendUpdates( )
     triggerClientEvent( client, "SAupdates.receiveUpdates", client, updates, dates )
 end
