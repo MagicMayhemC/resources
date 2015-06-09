@@ -34,13 +34,6 @@ function parseUpdates( updates, dates )
 	return memoText
 end
 
-function receiveUpdates( sUpdates, sDates )
-    local memoText = exports.SAupdates:parseUpdates( sUpdates, sDates )
-    guiSetText( updatesMemo,  memoText )
-end
-addEvent( "SAupdates.receiveUpdates", true )
-addEventHandler( "SAupdates.receiveUpdates", root, receiveUpdates )
-
 function showUpdateGui( )
 	guiSetText( updatesMemo,  "" )
 
@@ -57,6 +50,13 @@ function closeUpdateGui( )
 	guiSetInputEnabled( false )
 	showCursor( false )
 end
+
+function receiveUpdates( sUpdates, sDates )
+    local memoText = exports.SAupdates:parseUpdates( sUpdates, sDates )
+    guiSetText( updatesMemo,  memoText )
+end
+addEvent( "SAupdates.receiveUpdates", true )
+addEventHandler( "SAupdates.receiveUpdates", root, receiveUpdates )
 
 function addUpdate( _, ... )
 	local text = table.concat( {...}, " " )
