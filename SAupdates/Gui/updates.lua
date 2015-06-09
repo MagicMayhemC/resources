@@ -18,7 +18,7 @@ function createUpdateGui( )
     updatesWin = guiCreateWindow( (screenW - 510) / 2, (screenH - 264) / 2, 510, 264, "San Andreas Roleplaying Game", false )
     guiWindowSetSizable( updatesWin, false )
 
-    updatesMemo =  guiCreateMemo( 9, 27, 492, 198, "Updates\n______________________________________________\n$LIST", false, updatesWin )
+    updatesMemo =  guiCreateMemo( 9, 27, 492, 198, "ERROR LOADING THE UPDATES", false, updatesWin )
     guiMemoSetReadOnly( updatesMemo, true )
 
     closeButton = guiCreateButton( 413, 235, 88, 18, "CLOSE", false, updatesWin )   

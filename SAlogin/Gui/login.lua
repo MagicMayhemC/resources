@@ -35,7 +35,7 @@ function createLoginGui( )
 
     rememberCheckBox = guiCreateCheckBox( 10, 102, 105, 18, "Remember me", false, false, loginWindow )
 
-    updatesMemo = guiCreateMemo( 12, 130, 492, 156, "       ===== UPDATES =====      ", false, loginWindow )
+    updatesMemo = guiCreateMemo( 12, 130, 492, 156, "ERROR LOADING THE UPDATES", false, loginWindow )
     guiMemoSetReadOnly( updatesMemo, true )
 
     border1 = guiCreateStaticImage(0.00, -0.00, 1.00, 0.11, "Gui/images/bg.png", true)  
