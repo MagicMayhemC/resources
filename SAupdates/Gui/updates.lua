@@ -15,13 +15,13 @@
 ]]--
 function createUpdateGui( )
 	local screenW, screenH = guiGetScreenSize(  )
-    updatesWin = guiCreateWindow( ( screenW - 461 ) / 2, ( screenH - 263 ) / 2, 461, 263, "San Andreas Roleplaying Game", false )
+    updatesWin = guiCreateWindow( (screenW - 510) / 2, (screenH - 264) / 2, 510, 264, "San Andreas Roleplaying Game", false )
     guiWindowSetSizable( updatesWin, false )
 
-    updatesMemo = guiCreateMemo( 9, 27, 442, 198, "Updates\n______________________________________________\n$LIST", false, updatesWin )
+    updatesMemo =  guiCreateMemo( 9, 27, 492, 198, "Updates\n______________________________________________\n$LIST", false, updatesWin )
     guiMemoSetReadOnly( updatesMemo, true )
 
-    closeButton = guiCreateButton( 363, 235, 88, 18, "CLOSE", false, updatesWin )
+    closeButton = guiCreateButton( 413, 235, 88, 18, "CLOSE", false, updatesWin )   
     addEventHandler( "onClientGUIClick", closeButton, closeUpdateGui, false )    
 
     guiSetVisible( updatesWin, false )

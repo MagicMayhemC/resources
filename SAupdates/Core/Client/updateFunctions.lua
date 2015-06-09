@@ -13,12 +13,11 @@
     ------------------------------------
     © 2015 - MagicMayhem
 ]]--
-
 function parseUpdates( updates, dates )
 	local memoText = "Updates"
 
-	table.sort(updates, function(a, b) return a[4] > b[4] end) -- sort by id, last id = latest update
-    table.sort(dates, function(a, b) return a[2] > b[2] end) -- sort by id, last id = latest date
+	table.sort( updates, function(a, b) return a[4] > b[4] end ) -- sort by id, last id = latest update
+    table.sort( dates, function(a, b) return a[2] > b[2] end ) -- sort by id, last id = latest date
 
 	for key, date in pairs( dates ) do
 		memoText = memoText .. "\r\n" .. FormatDate( "\r\n[d/m/Y]", " ", date[1] )
@@ -36,13 +35,15 @@ function parseUpdates( updates, dates )
 end
 
 function receiveUpdates( sUpdates, sDates )
-	local memoText = parseUpdates( sUpdates, sDates )
+    local memoText = exports.SAupdates:parseUpdates( sUpdates, sDates )
     guiSetText( updatesMemo,  memoText )
 end
 addEvent( "SAupdates.receiveUpdates", true )
 addEventHandler( "SAupdates.receiveUpdates", root, receiveUpdates )
 
 function showUpdateGui( )
+	guiSetText( updatesMemo,  "" )
+
 	guiSetVisible( updatesWin, true )
 	guiSetInputEnabled( true )
 	showCursor( true )
@@ -56,3 +57,17 @@ function closeUpdateGui( )
 	guiSetInputEnabled( false )
 	showCursor( false )
 end
+
+function addUpdate( _, ... )
+	local text = table.concat( {...}, " " )
+
+	if not ( string.len( text ) > 65 ) then
+		local time = getTimestamp( )
+		local playerName = getPlayerName( localPlayer )
+
+		triggerServerEvent( "SAupdates.addUpdate", localPlayer, time, text, playerName )
+	else
+		outputChatBox( "This message is greater than 65 characters." )
+	end
+end
+addCommandHandler( "addupdate", addUpdate )

@@ -25,6 +25,10 @@
 	<script src="Core/Server/updateFunctions.lua" type="server"/>
 	<!-- GUIs !-->
 	<script src="Gui/updates.lua" type="client"/>
+	<script src="Gui/informMessage.lua" type="client"/>
 	<!-- Exports !-->
 	<export function="parseUpdates" type="client"/>
+	<export function="insertUpdate" type="server"/>
+	<!-- Files !-->
+	<file src="Gui/sounds/newupdate.mp3"/>
 </meta>

@@ -24,3 +24,15 @@ function loginSendUpdates( )
 end
 addEvent( "SAlogin.sendUpdates", true )
 addEventHandler( "SAlogin.sendUpdates", root, loginSendUpdates )
+
+function addUpdate( date, text, author )
+    exports.SAupdates:insertUpdate( date, text, author )
+
+    local players = getElementsByType( "player" )
+
+    for k, player in ipairs( players ) do
+        triggerClientEvent( player, "SAupdates.newUpdate", player )
+    end
+end
+addEvent( "SAupdates.addUpdate", true )
+addEventHandler( "SAupdates.addUpdate", root, addUpdate )
