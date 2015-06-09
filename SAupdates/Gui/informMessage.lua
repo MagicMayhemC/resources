@@ -65,7 +65,7 @@ function newUpdate( )
     fadeIn = true
 	playUpdateSound( )
 
-    setTimer( function( ) fadeOut = true end, 6400, 1)
+    setTimer( function( ) fadeOut = true end, 6500, 1)
 	setTimer( function( ) removeEventHandler( "onClientRender", root, showDXmsg ) end, 7000, 1 )
 end
 addEvent( "SAupdates.newUpdate", true )
