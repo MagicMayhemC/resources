@@ -15,13 +15,13 @@
 ]]--
 
 function parseUpdates( updates, dates )
-	local memoText = "Updates\r\n"
+	local memoText = "Updates"
 
 	table.sort(updates, function(a, b) return a[4] > b[4] end) -- sort by id, last id = latest update
     table.sort(dates, function(a, b) return a[2] > b[2] end) -- sort by id, last id = latest date
 
 	for key, date in pairs( dates ) do
-		memoText = memoText .. "\r\n" .. FormatDate( "[d/m/Y]", " ", date[1] )
+		memoText = memoText .. "\r\n" .. FormatDate( "\r\n[d/m/Y]", " ", date[1] )
 
 		for id, update in ipairs( updates ) do
 			local dateOfUpdate, updateInfo, author = unpack( update )
