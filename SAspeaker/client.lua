@@ -171,7 +171,7 @@ addEventHandler ( "onClientPreRender", root,
             local x, y, z = getElementPosition ( v["sound"] )
             local px, py, pz = getElementPosition ( localPlayer )
             local distance = getDistanceBetweenPoints3D ( px, py, pz, x, y, z )
-            local sx, sy = getScreenFromWorldPosition ( x - 0.4, y, z + 1.4 )
+            local sx, sy = getScreenFromWorldPosition ( x - 0.3, y + 0.15, z + 1.4 )
 			
             if sx and distance <= 10 then
                 
