@@ -1,0 +1,4 @@
+<meta>
+    <script src="c_hospital.lua" type="client"/>
+	<script src="s_hospital.lua" type="server"/>
+</meta>
