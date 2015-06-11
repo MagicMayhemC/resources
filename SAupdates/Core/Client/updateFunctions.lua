@@ -13,6 +13,13 @@
     ------------------------------------
     © 2015 - MagicMayhem
 ]]--
+local version = 1.01
+local screenX, screenY = guiGetScreenSize()
+local label = guiCreateLabel( 0, 0, screenX, 15, "SA:RPG "..version, false )
+guiSetSize( label, guiLabelGetTextExtent( label ) + 5, 14, false )
+guiSetPosition( label, screenX - guiLabelGetTextExtent( label ) - 5, screenY - 27, false )
+guiSetAlpha( label, 0.5 )
+
 function parseUpdates( updates, dates )
 	local memoText = "Updates"
 
