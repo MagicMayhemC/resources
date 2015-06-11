@@ -131,13 +131,8 @@ function createSpeaker (player, url, distance, x, y, z, rotation)
 	speakers[player] = {}
 	speakers[player]["sound"] = playSound3D (url, x, y, z)
 	setSoundMaxDistance (speakers[player]["sound"], distance)
-	if isPedInVehicle(player) then
-		attachElements(speakers[player]["sound"], getPedOccupiedVehicle (player))
-		speakers[player]["invehicle"] = "true"
-	else
-		speakers[player]["object"] = createObject (2229, x, y, z, 0, 0, rotation)
-		speakers[player]["invehicle"] = "false"
-	end
+	speakers[player]["object"] = createObject (2232, x, y, z, 0, 0, rotation)
+	speakers[player]["invehicle"] = "false"
 end
 
 
@@ -170,16 +165,18 @@ addEventHandler ( "onClientPreRender", root,
             
             local x, y, z = getElementPosition ( v["sound"] )
             local px, py, pz = getElementPosition ( localPlayer )
-            local distance = getDistanceBetweenPoints3D ( px, py, pz, x, y, z )
-            local sx, sy = getScreenFromWorldPosition ( x - 0.3, y + 0.15, z + 1.4 )
+            local distance = getDistanceBetweenPoints3D ( px, py, pz, x, y, z)
+            local sx, sy = getScreenFromWorldPosition ( x, y, z + 0.7 )
 			
-            if sx and distance <= 10 then
+            if sx and distance <= 20 then
                 
                 if isElement ( v["sound"] ) then
                     song = getSoundMetaTags ( v["sound"] )["stream_title"]
                 end
                 
                 if type ( song ) == "string" then
+					local stringLegth = string.len(song)*6
+					dxDrawRectangle ( sx - (stringLegth / 2), sy, stringLegth + 15, 17.5, tocolor ( 0, 0, 0, 150 ) )
                     dxDrawText ( song, sx, sy, sx + 15, sy, tocolor ( 255, 255, 255, 255 ), 1, "default-bold", "center" )
                 end
             end

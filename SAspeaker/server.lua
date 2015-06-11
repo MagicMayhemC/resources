@@ -36,20 +36,12 @@ function onSpeakerCreate (player, url, distance)
 		return false
 	end
 	local x, y, z = getElementPosition (player)
-	local z = z - 1
+	local z = z - 0.4
+	
 	local rx, ry, rz = getElementRotation (player)
 	
-	local rz = rz + 90
-	local rz = 0.0174532925 * rz
-	local x = (math.cos(rz) * 1.5) + x
-	local y = (math.sin(rz) * 1.5) + y
 	
-	local ox, oy, oz = getElementPosition (player)
-	local rotation = findRotation(x, y, ox, oy)
-	local rotation = rotation + 180
-	
-	
-	triggerClientEvent ("speakerStuffFromServer", getRootElement(), player, url, distance, x, y, z, rotation)
+	triggerClientEvent ("speakerStuffFromServer", getRootElement(), player, url, distance, x, y, z, rz)
 end
 
 
