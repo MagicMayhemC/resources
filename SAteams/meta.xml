@@ -1,0 +1,21 @@
+<!--
+	Resource name: San Andreas Teams
+
+	Resource Information
+	------------------------------------
+	This resource is for teams bruv
+	------------------------------------
+	YOU DO NOT HAVE THE RIGHT TO USE THIS
+	WITHOUT PERMISSION! IF YOU HAVE BEEN
+	GIVEN PERMISSION THEN YOU ARE FREE TO
+	MAKE ANY EDITS.
+	------------------------------------
+	© 2015 - MagicMayhem
+!-->
+
+<meta>
+    <info author="MagicMayhem" name="San Andreas Teams" start="false"/>
+    <script src="teams.lua" />
+    
+    <export function="assignTeam" type="server" />
+</meta>

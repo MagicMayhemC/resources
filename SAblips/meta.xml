@@ -1,0 +1,41 @@
+<!--
+	Resource name: San Andreas Blips
+
+	Resource Information
+	------------------------------------
+	This resource organizes blips.
+	------------------------------------
+	YOU DO NOT HAVE THE RIGHT TO USE THIS
+	WITHOUT PERMISSION! IF YOU HAVE BEEN
+	GIVEN PERMISSION THEN YOU ARE FREE TO
+	MAKE ANY EDITS.
+	------------------------------------
+	© 2015 - MagicMayhem
+!-->
+
+<meta>
+	<info author="Jamie" name="San Andreas Blips" start="false"/>
+	
+    <script src="radar_blips.lua" type="client" />
+    <script src="playerBlips.lua" />
+    
+    <export function="setPlayerNameColor" type="server" />
+    <script src="custom_blips/blipstreamer_client.lua" type="client" />
+    <script src="custom_blips/customblips.lua" type="client" />
+    <export function="destroyBlip" type="server" />
+    <script src="custom_blips/imagelib.lua" type="client" />
+    <script src="custom_blips/utility.lua" type="client" />
+    
+    <export function="guiConvertToCustomBlip" type="client" />
+    <export function="createCustomBlip" type="client" />
+    <export function="setCustomBlipAlpha" type="client" />
+    <export function="setCustomBlipVisible" type="client" />
+	<export function="getCustomBlipStreamRadius" type="client" />
+    <export function="setCustomBlipStreamRadius" type="client" />
+    <export function="getCustomBlipPosition" type="client" />
+    <export function="setCustomBlipPosition" type="client" />
+    <export function="setCustomBlipColor" type="client" />
+    <export function="setCustomBlipRadarScale" type="client" />
+    <export function="isCustomBlipVisible" type="client" />
+    <export function="destroyCustomBlip" type="client" />
+</meta>
