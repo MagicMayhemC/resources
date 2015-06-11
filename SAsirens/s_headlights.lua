@@ -110,7 +110,9 @@ end
 addEventHandler ( "onVehicleExplode", getRootElement(), killTimerOnVehicleExplode)
 
 function bindOnVehicleEnter(thePlayer, seat, jacked)
-	bindKey( thePlayer, "p", "down", turnOnELS)
+	if getTeamName(getPlayerTeam(thePlayer)) == "Law Enforcement" or getTeamName(getPlayerTeam(thePlayer)) == "Emergency Services"  then
+		bindKey( thePlayer, "p", "down", turnOnELS)
+	end
 end
 addEventHandler("onVehicleEnter", root, bindOnVehicleEnter)
 

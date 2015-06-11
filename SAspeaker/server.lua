@@ -31,10 +31,6 @@ addEventHandler ("onResourceStart", getResourceRootElement(), startScript)
 
 
 function onSpeakerCreate (player, url, distance)
-	if getPedOccupiedVehicle (player) then
-		outputChatBox ("You can't create a speaker while in a vehicle.", player, 255, 0, 0)
-		return false
-	end
 	local x, y, z = getElementPosition (player)
 	local z = z - 0.4
 	

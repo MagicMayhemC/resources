@@ -131,20 +131,21 @@ function createSpeaker (player, url, distance, x, y, z, rotation)
 	speakers[player] = {}
 	speakers[player]["sound"] = playSound3D (url, x, y, z)
 	setSoundMaxDistance (speakers[player]["sound"], distance)
-	speakers[player]["object"] = createObject (2232, x, y, z, 0, 0, rotation)
-	speakers[player]["invehicle"] = "false"
+	if isPedInVehicle(player) then
+		local veh = getPedOccupiedVehicle (player)
+		speakers[player]["object"] = createObject (2232, 0, 0, 0, 0, 0, rotation, true)
+		attachElements(speakers[player]["object"], veh, 0,0,1.4)
+		attachElements(speakers[player]["sound"], speakers[player]["object"])
+	else
+		speakers[player]["object"] = createObject (2232, x, y, z, 0, 0, rotation)
+	end
 end
 
 
 function destroySpeaker (player)
 	destroyElement (speakers[player]["sound"])
-	if speakers[player]["invehicle"] == "false" then
-		destroyElement (speakers[player]["object"])
-	end
+	destroyElement (speakers[player]["object"])
 	speakers[player] = false
-	guiSetText (nowPlayingEditLabel, "-")
-	guiSetVisible (nowPlayingText, false)
-	guiSetVisible (nowPlayingEditLabel, false)
 end
 
 
