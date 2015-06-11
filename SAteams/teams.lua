@@ -34,7 +34,7 @@ function assignTeam(player, teamName, noBlip)
 end
 
 for i,player in ipairs(getElementsByType("player")) do
-	assignTeam(player, "Civilians")
+	assignTeam(player, "Emergency Services")
 end
 
 addEventHandler("onPlayerJoin", root, function()
