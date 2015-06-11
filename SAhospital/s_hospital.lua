@@ -8,6 +8,7 @@ addEventHandler ( "respawnDeadPlayer", root,
 			setTimer( setCameraMatrix, 1000, 1, source, mx, my, mz, lx, ly, lz )
 			setTimer( fadeCamera, 2000, 1, source, true, 1.0, 0, 0, 0 )
 			setTimer( respawnPlayer, respawnTime, 1, source, hx, hy, hz, rotation )
+			exports.SAdxDisplay:createNewDxMessage( source, "You respawned at the "..hospitalName, 225, 225, 225 )
 	end
 )
 
