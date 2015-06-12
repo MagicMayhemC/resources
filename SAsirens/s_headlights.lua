@@ -1,13 +1,3 @@
---\--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--
--- What: s_els.lua
--- For: Grand Theft International, Law Enforcement.
--- By: Diego, with some help from Gunslinger.
--- Description: Emergency Lights system for Police Cruisers. It switches the vehicle's headlights, and backlights, upon pressing num_1.
--- Date: Monday, 21st April 2014
---/--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--
-
--- Script:
----------->>
 local lights_1 = {}
 local timer = {}
 local timer2 = {}
@@ -110,12 +100,11 @@ end
 addEventHandler ( "onVehicleExplode", getRootElement(), killTimerOnVehicleExplode)
 
 function bindOnVehicleEnter(thePlayer, seat, jacked)
-	if getTeamName(getPlayerTeam(thePlayer)) == "Law Enforcement" or getTeamName(getPlayerTeam(thePlayer)) == "Emergency Services"  then
-		bindKey( thePlayer, "p", "down", turnOnELS)
-	end
+	bindKey( thePlayer, "p", "down", turnOnELS)
 end
 addEventHandler("onVehicleEnter", root, bindOnVehicleEnter)
 
---------------------------------------------------------------------------------------------------
--- Copyright: (C) 	GTI:RPG
---------------------------------------------------------------------------------------------------
+function bindOnVehicleExit(thePlayer, seat, jacked)
+	unbindKey( thePlayer, "p", "down", turnOnELS)
+end
+addEventHandler("onVehicleExit", root, bindOnVehicleExit)

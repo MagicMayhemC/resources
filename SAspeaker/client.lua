@@ -131,10 +131,40 @@ function createSpeaker (player, url, distance, x, y, z, rotation)
 	speakers[player] = {}
 	speakers[player]["sound"] = playSound3D (url, x, y, z)
 	setSoundMaxDistance (speakers[player]["sound"], distance)
-	if isPedInVehicle(player) then
-		local veh = getPedOccupiedVehicle (player)
+		local veh = getPedContactElement(player)
+		if getElementType(veh) == "vehicle" then
+			local px, py, pz = getElementPosition(player)
+			local vx, vy, vz = getElementPosition(veh)
+			local sx = px - vx
+			local sy = py - vy
+			local sz = pz - vz
+			
+			local rotpX = 0
+			local rotpY = 0
+			local rotpZ = getPedRotation(player)
+			
+			local rotvX,rotvY,rotvZ = getElementRotation(veh)
+			
+			local t = math.rad(rotvX)
+			local p = math.rad(rotvY)
+			local f = math.rad(rotvZ)
+			
+			local ct = math.cos(t)
+			local st = math.sin(t)
+			local cp = math.cos(p)
+			local sp = math.sin(p)
+			local cf = math.cos(f)
+			local sf = math.sin(f)
+			
+			local z = ct*cp*sz + (sf*st*cp + cf*sp)*sx + (-cf*st*cp + sf*sp)*sy
+			local x = -ct*sp*sz + (-sf*st*sp + cf*cp)*sx + (cf*st*sp + sf*cp)*sy
+			local y = st*sz - sf*ct*sx + cf*ct*sy
+			
+			local rotX = rotpX - rotvX
+			local rotY = rotpY - rotvY
+			local rotZ = rotpZ - rotvZ
 		speakers[player]["object"] = createObject (2232, 0, 0, 0, 0, 0, rotation, true)
-		attachElements(speakers[player]["object"], veh, 0,0,1.4)
+		attachElements(speakers[player]["object"], veh, x, y, z - 0.4, rotX, rotY, rotZ)
 		attachElements(speakers[player]["sound"], speakers[player]["object"])
 	else
 		speakers[player]["object"] = createObject (2232, x, y, z, 0, 0, rotation)
