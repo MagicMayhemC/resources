@@ -162,7 +162,7 @@ end
 addEventHandler ( "onClientPreRender", root,
     function ( )
         for i,v in pairs ( speakers ) do
-            if not v["sound"] or getElementDimension ( localPlayer ) ~= getElementDimension ( v["sound"] ) then return end
+            if not v or not v["sound"] or getElementDimension ( localPlayer ) ~= getElementDimension ( v["sound"] ) then return end
             
             local x, y, z = getElementPosition ( v["sound"] )
             local px, py, pz = getElementPosition ( localPlayer )
