@@ -39,7 +39,7 @@ function removeVehicleTexture(theVehicle, texName) --Exciter
 		return false
 	end
 	if (staff) then
-		local mysql = exports.mysql
+		--local mysql = exports.mysql
 		local textures = getElementData(theVehicle, "textures") or {}
 		for k,v in ipairs(textures) do
 			if(v[1] == texName) then

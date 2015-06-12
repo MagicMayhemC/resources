@@ -45,10 +45,10 @@ addEvent( "lspd:cycleSirenState", true )
 addEventHandler( "lspd:cycleSirenState", getRootElement(), cycleSirenState )
 
 function addSirens (player, seat)
+	local veh_model = getVehicleName(source)
 	local installedStrobes = getPreInstalledStrobes()
     if player and (seat==0) then
 		if (getElementData( source, "lightbar" ) == 1) then
-			local veh_model = getVehicleName(source)
 			local lightBarStrobes = getLightBarStrobes()
 			if (lightBarStrobes[veh_model] == nil) then
 				--vehicle doesn't have strobes scripted
@@ -73,7 +73,6 @@ function addSirens (player, seat)
 				end
 			end
 		elseif ((getTeamName(getPlayerTeam(player)) == "Law Enforcement") or (getTeamName(getPlayerTeam(player)) == "Emergency Services")) and (installedStrobes[veh_model] == nil) then -- Emergency siren lights
-			local veh_model = getVehicleName(source)
 			local emergencyStrobes = getEmergencyStrobes()
 
 			if (emergencyStrobes[veh_model] == nil) then
@@ -98,11 +97,7 @@ function addSirens (player, seat)
 					end
 				end
 			end
-		else -- PreInstalled sirens such as police cruisers, fire engines and ambulances.
-			local veh_model = getVehicleName(source)
-			if (installedStrobes[veh_model] == nil) then
-				--vehicle doesn't have strobes scripted
-			else
+		elseif (installedStrobes[veh_model]) then -- PreInstalled sirens such as police cruisers, fire engines and ambulances.
 				local total = installedStrobes[veh_model]["total"]
 				addVehicleSirens(source,total,2, false, true, true, true)
 				for id, desc in pairs(installedStrobes[veh_model]) do
@@ -121,7 +116,6 @@ function addSirens (player, seat)
 						setVehicleSirens(source, id, desc[1], desc[2], desc[3], desc[4], desc[5], desc[6], desc[7], desc[8])
 					end
 				end
-			end
 		end
 	end
 end
